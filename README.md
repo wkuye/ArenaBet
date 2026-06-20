@@ -58,15 +58,9 @@
 git clone https://github.com/YOUR_USERNAME/arenabet.git
 cd arenabet
 
-# Install dependencies
-flutter pub get
+## ⬇️ Download
 
-# Build APK
-flutter build apk
-
-# Or run directly on connected Android device
-flutter run
-```
+[![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android)](https://github.com/wkuye/ArenaBet/releases/download/1.0.0/app-release.apk)
 
 
 
