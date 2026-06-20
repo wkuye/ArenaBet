@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, sans-serif;
+      background: #1a1a2e;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .logo { font-size: 64px; margin-bottom: 16px; }
+    h2 { font-size: 22px; margin-bottom: 8px; }
+    p  { color: #aaa; font-size: 14px; margin-bottom: 32px; }
+    button {
+      background: #ab9ff2;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 40px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+    }
+    button:disabled { opacity: 0.6; }
+    #status { margin-top: 16px; color: #aaa; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="logo">👻</div>
+  <h2>Connect Phantom</h2>
+  <p>Connect your Sui wallet to ArenaBet</p>
+  <button id="btn" onclick="connectSui()">Connect Wallet</button>
+  <div id="status"></div>
+<script>
+  function setStatus(msg) {
+    document.getElementById('status').innerText = msg;
+  }
+
+  async function connectSui() {
+    const btn = document.getElementById('btn');
+    btn.disabled = true;
+    try {
+      setStatus('Connecting...');
+
+      const provider = window?.phantom?.sui;
+
+      if (!provider) {
+        setStatus('Open this page inside Phantom app.');
+        btn.disabled = false;
+        return;
+      }
+
+      const account = await provider.requestAccount();
+      const address = account?.address;
+
+      if (!address) {
+        setStatus('No address returned.');
+        btn.disabled = false;
+        return;
+      }
+
+      setStatus('Connected! Returning to app...');
+
+      // =========================
+      // TRY MULTIPLE REDIRECT
+      // METHODS — Phantom browser
+      // may block custom schemes
+      // =========================
+      const deeplink = 'arenabet://sui-connect?address=' + address;
+
+      // Method 1 — window.location.href
+      window.location.href = deeplink;
+
+      // Method 2 — anchor click (fallback)
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = deeplink;
+        a.click();
+      }, 500);
+
+      // Method 3 — window.open (fallback)
+      setTimeout(() => {
+        window.open(deeplink, '_self');
+      }, 1000);
+
+      // Show address on screen as fallback
+      // in case all redirects fail
+      setTimeout(() => {
+        setStatus('Address: ' + address + '\n\nIf app did not open, copy this address.');
+        btn.disabled = false;
+      }, 1500);
+
+    } catch (e) {
+      setStatus('Error: ' + e.message);
+      btn.disabled = false;
+    }
+  }
+</script>
+</body>
+</html>

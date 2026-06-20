@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "920547360785",
+    "project_id": "arenabet-c8607",
+    "storage_bucket": "arenabet-c8607.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920547360785:android:6531fa36f1422d638c71b0",
+        "android_client_info": {
+          "package_name": "com.example.xoxo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920547360785-uubjjo7vd92fq9hsec13ed8jbkidlfv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.xoxo",
+            "certificate_hash": "b6f5e585ef8eda1eb2d46bee8edeadeda1fbb987"
+          }
+        },
+        {
+          "client_id": "920547360785-k5bkaqh2evjof5ng31b09knqrajsgcg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXT2FzokbNw0gK-guYE5c2c57i2wVOslQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920547360785-k5bkaqh2evjof5ng31b09knqrajsgcg0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "920547360785-qrrtph6n4vnmj87iqn7jg9roc5kd1fco.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.xoxo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
