@@ -5,11 +5,6 @@ cat > README.md << 'EOF'
 
 ---
 
-## 📱 Screenshots
-
-> Coming soon
-
----
 
 ## 🚀 Features
 
