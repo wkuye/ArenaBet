@@ -60,7 +60,13 @@ cd arenabet
 
 ## ⬇️ Download
 
-[![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android)](https://github.com/wkuye/ArenaBet/releases/download/1.0.0/app-release.apk)
+## 📲 Installation
+
+1. Go to [Releases](https://github.com/wkuye/ArenaBet/releases/latest) and download `app-release.apk`
+2. On your Android device go to **Settings → Install unknown apps** and allow your browser
+3. Open the downloaded APK and install
+4. Make sure **Phantom Wallet** is installed on your device
+5. Open ArenaBet and tap **Connect Wallet**
 
 
 
